@@ -1,7 +1,10 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Navba = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex w-full justify-between items-center font-semibold">
@@ -10,11 +13,13 @@ const Navba = () => {
             src={assets.arrow_left}
             alt=""
             className="w-8 bg-black p-2 rounded-2xl cursor-pointer"
+            onClick={() => navigate(-1)}
           />
           <img
             src={assets.arrow_right}
             alt=""
             className="w-8 bg-black p-2 rounded-2xl cursor-pointer"
+            onClick={() => navigate(1)}
           />
         </div>
         <div className="flex items-center gap-4">
